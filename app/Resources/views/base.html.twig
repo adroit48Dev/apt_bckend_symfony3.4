@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- Template Name: Adroit 48 build with Twitter Bootstrap 3.x | Author: VPAGE -->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- start: HEAD -->
+<head>
+    <title>{% block title %}Adroit 48{% endblock %}</title>
+
+    {% block stylesheets %}
+        <!-- start: META -->
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- end: META -->
+        <!-- start: GOOGLE FONTS -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+        <!-- end: GOOGLE FONTS -->
+        <!-- start: MAIN CSS -->
+        <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/themify-icons/themify-icons.min.css') }}">
+        <link href="{{ asset('vendor/animate.css/animate.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ asset('vendor/switchery/switchery.min.css') }}" rel="stylesheet" media="screen">
+        <!-- end: MAIN CSS -->
+        <!-- start: CLIP-TWO CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/themes/theme-5.css') }}"  />
+        <!-- end: CLIP-TWO CSS -->
+        <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+        <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+    {% endblock %}
+</head>
+<!-- end: HEAD -->
+<body>
+{% block body %}
+<div id="app">
+    <!-- sidebar -->
+    <div class="sidebar app-aside" id="sidebar">
+        <div class="sidebar-container perfect-scrollbar">
+            <nav>
+                <!-- start: SEARCH FORM -->
+                <div class="search-form">
+                    <a class="s-open" href="#">
+                        <i class="ti-search"></i>
+                    </a>
+                    <form class="navbar-form" role="search">
+                        <a class="s-remove" href="#" target=".navbar-form">
+                            <i class="ti-close"></i>
+                        </a>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <button class="btn search-button" type="submit">
+                                <i class="ti-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- end: SEARCH FORM -->
+                <!-- start: MAIN NAVIGATION MENU -->
+                <div class="navbar-title">
+                    <span>Main Navigation</span>
+                </div>
+                <ul class="main-navigation-menu">
+                    <li class="active open">
+                        <a href="">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <i class="ti-home"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <span class="title"> Dashboard </span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <i class="ti-notepad"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <span class="title"> Survey </span><i class="icon-arrow"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <ul class="sub-menu">
+
+                            <li>
+                                <a href="">
+                                    <span class="title"> Do's & Dont's </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="title"> Survey </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <span class="title">Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                <li>
+                    <a href="javascript:void(0)">
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="ti-notepad"></i>
+                            </div>
+                            <div class="item-inner">
+                                <span class="title"> Create a New </span><i class="icon-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="{{ path('joblist_new') }}">
+                                <span class="title"> Joblist </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('finlist_new') }}">
+                                <span class="title"> Financial Planning </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('relist_new') }}">
+                                <span class="title"> Reality </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('edulist_new') }}">
+                                <span class="title"> Education </span>
+                            </a>
+                        </li>
+                    </ul>
+
+            </li>
+
+
+
+
+
+                    </ul>
+                </li>
+                </ul>
+                </li>
+
+
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+
+
+                </ul>
+                <!-- end: MAIN NAVIGATION MENU -->
+                <!-- start: CORE FEATURES -->
+                <div class="navbar-title">
+                    <span>Core Features</span>
+                </div>
+                <ul class="folders">
+                    <li>
+                        <a href="">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+                                </div>
+                                <div class="item-inner">
+                                    <span class="title"> Calendar </span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-folder-open-o fa-stack-1x fa-inverse"></i> </span>
+                                </div>
+                                <div class="item-inner">
+                                    <span class="title"> Messages </span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end: CORE FEATURES -->
+                <!-- start: DOCUMENTATION BUTTON -->
+
+                <!-- end: DOCUMENTATION BUTTON -->
+            </nav>
+        </div>
+    </div>
+    {% block navbar %}
+    <div class="app-content">
+        <!-- start: TOP NAVBAR -->
+        <header class="navbar navbar-default navbar-static-top">
+            <!-- start: NAVBAR HEADER -->
+            <div class="navbar-header">
+                <a href="#" class="sidebar-mobile-toggler pull-left hidden-md hidden-lg" class="btn btn-navbar sidebar-toggle" data-toggle-class="app-slide-off" data-toggle-target="#app" data-toggle-click-outside="#sidebar">
+                    <i class="ti-align-justify"></i>
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="Adroit 48"/>
+                </a>
+                <a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
+                    <i class="ti-align-justify"></i>
+                </a>
+                <a class="pull-right menu-toggler visible-xs-block" id="menu-toggler" data-toggle="collapse" href=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ti-view-grid"></i>
+                </a>
+            </div>
+            <!-- end: NAVBAR HEADER -->
+            <!-- start: NAVBAR COLLAPSE -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-right">
+                    <!-- start: MESSAGES DROPDOWN -->
+                    <li class="dropdown">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="dot-badge partition-red"></span> <i class="ti-comment"></i> <span>MESSAGES</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
+                            <li>
+                                <span class="dropdown-header"> Unread messages</span>
+                            </li>
+                            <li>
+                                <div class="drop-down-wrapper ps-container">
+                                    <ul>
+                                        <li class="unread">
+                                            <a href="javascript:;" class="unread">
+                                                <div class="clearfix">
+                                                    <div class="thread-image">
+                                                        <img src="{{ asset('assets/images/avatar-2.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="thread-content">
+                                                        <span class="author">Nicole Bell</span>
+                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+                                                        <span class="time"> Just Now</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="unread">
+                                                <div class="clearfix">
+                                                    <div class="thread-image">
+                                                        <img src="{{ asset('assets/images/avatar-3.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="thread-content">
+                                                        <span class="author">Steven Thompson</span>
+                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+                                                        <span class="time">8 hrs</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="clearfix">
+                                                    <div class="thread-image">
+                                                        <img src="{{ asset('assets/images/avatar-5.jpg') }}" alt="">
+                                                    </div>
+                                                    <div class="thread-content">
+                                                        <span class="author">Kenneth Ross</span>
+                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
+                                                        <span class="time">14 hrs</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="view-all">
+                                <a href="#">
+                                    See All
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end: MESSAGES DROPDOWN -->
+
+
+                    <!-- start: USER OPTIONS DROPDOWN -->
+
+                    <li class="dropdown current-user">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{{ asset('assets/images/avatar-1.jpg') }}" alt="Peter"> <span class="username">My Profile <i class="ti-angle-down"></i></i></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-dark">
+                            <li>
+                                <a href="">
+                                    My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    My Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    My Messages (0)
+                                </a>
+                            </li>
+
+                            <li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a href="{{ path('logout') }}">
+                                    Log Out
+                                </a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- end: USER OPTIONS DROPDOWN -->
+                </ul>
+            </div>
+            {% endblock %}
+
+            <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+
+            <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+
+            <!-- end: NAVBAR COLLAPSE -->
+            {% endblock %}
+
+        </header>
+
+        <div class="main-content" >
+            <div class="wrap-content container" id="container">
+                {% block content %}{% endblock %}
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {% block footer %}
+        <footer>
+            <div class="footer-inner">
+                <div class="pull-left">
+                    &copy; <span class="current-year"></span><span class="text-bold text-uppercase"> VPAGE</span>. <span>All rights reserved</span>
+                </div>
+                <div class="pull-right">
+                    <span class="go-top"><i class="ti-angle-up"></i></span>
+                </div>
+            </div>
+        </footer>
+    {% endblock%}
+    <!-- end: FOOTER -->
+
+
+</div>
+{% block javascripts %}
+    <!-- start: MAIN JAVASCRIPTS -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/modernizr/modernizr.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-cookie/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('vendor/switchery/switchery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <!-- end: MAIN JAVASCRIPTS -->
+    <!-- start: CLIP-TWO JAVASCRIPTS -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/form-elements.js') }}"></script>
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script>
+        jQuery(document).ready(function() {
+            Main.init();
+            FormElements.init();
+        });
+    </script>
+{% endblock %}
+<!-- end: JavaScript Event Handlers for this page -->
+<!-- end: CLIP-TWO JAVASCRIPTS -->
+</body>
+</html>

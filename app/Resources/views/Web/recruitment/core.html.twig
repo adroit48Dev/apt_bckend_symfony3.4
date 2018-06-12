@@ -1,0 +1,82 @@
+{% extends 'Web/base1.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid container-fullw bg-custom">
+
+        <section id="page-title " class="padding-top-10 padding-bottom-15 padding-left-10 bg-white navbar-static-top" >
+            <h2>Recruitment | CORE </h2>
+        </section>
+
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-12">
+
+
+
+            <div class="container-fluid container-fullw">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Core Jobs</span></h5>
+                        <div class="row">
+
+                        </div>
+
+
+                        {% for tag in list%}
+
+
+                            <div class="col-md-12">
+
+                                <div class="panel panel-white" id="panel1">
+
+                                    <div class="panel-heading">
+
+                                        <h2 class="panel-title"><b>{{ tag.title }}</b></h2>
+                                    </div>
+
+
+                                    <div class="fa-hover col-md-3 col-sm-4">
+                                        <i class="ti-briefcase">  </i> {{ tag.openings }}</div><br>
+
+                                    <div class="fa-hover col-md-3 col-sm-4">
+                                        <i class="ti-map-alt">  </i>  {{ tag.jobLocation.city }}
+                                    </div><br>
+
+                                    <div class="fa-hover col-md-3 col-sm-4">
+                                        <i class="ti-flag-alt"> </i>
+
+                                        {% for sk in tag.skills %}
+                                            {{ sk.skillTitle }}, {% endfor %}</div><br>
+                                    <div class="panel-body">
+                                        {{ tag.description }}
+                                    </div>
+
+                                    <div class="panel-footer">
+                                        <div class="fa-hover col-md-3 col-sm-4">Posted :
+                                            <i class="ti-calendar"> </i> {{ tag.createdAt |date("Y-m-d", "Asia/Kolkata") }} </div>
+
+                                        <a href=""  type="submit" class="">Apply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent () }}
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section id="page-title" class="padding-top-10 padding-bottom-15 padding-left-10" >
+    <h2>Realities Creation</h2>
+    <div class="container-fluid container-fullw bg-white">
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-12">
+
+
+
+            <div class="container-fluid container-fullw">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Realities creation</span></h5>
+                        <div class="row">
+
+                        </div>
+
+
+
+    {{ form_start(form) }}
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Title
+                            </h5>
+                            {{ form_widget(form.realTitle, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Description
+                            </h5>
+                            {{ form_widget(form.realDescription, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Availablity
+                            </h5>
+                            {{ form_widget(form.realAvailable, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Location
+                            </h5>
+                            {{ form_widget(form.realLocation, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Type
+                            </h5>
+                            {{ form_widget(form.realType, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Created at
+                            </h5>
+                            {{ form_widget(form.realCreatedAt) }}
+                        </div>
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Added By
+                            </h5>
+                            {{ form_widget(form.realAddedBy, {'attr' : {'class': 'form-control'}}) }}
+                        </div>
+
+        <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('relist_index') }}" class="btn btn-primary">Back to the list</a>
+        </li>
+    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+emp:
+    resource: "@EmpBundle/Controller/Admin/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+employee_registration:
+    path:     /employee/register
+    defaults: { _controller: EmpBundle:Admin\Registration:register }
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

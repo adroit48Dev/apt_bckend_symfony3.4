@@ -1,0 +1,44 @@
+
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+        public: true
+
+
+    AppBundle\:
+        resource: '../../src/AppBundle/*'
+        exclude: '../../src/AppBundle/{Entity,Repository,Tests}'
+
+    EmpBundle\:
+        resource: '../../src/EmpBundle/*'
+        exclude: '../../src/EmpBundle/{Entity,Repository,Tests}'
+
+
+    EmpBundle\Controller\Admin\:
+            resource: '../../src/EmpBundle/Controller/Admin/'
+            public: true
+            tags: ['controller.service_arguments']
+
+
+
+    AppBundle\Controller\:
+        resource: '../../src/AppBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+#    AppBundle\Controller\Api\v1\:
+#        resource: '../../AppBundle/Controller/Api/v1/'
+#        public: true
+#        tags: ['controller.service_arguments']
+
+
+    app.form.registration:
+        class: AppBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+
+

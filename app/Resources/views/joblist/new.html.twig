@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    <link href="{{ asset('vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset('vendor/select2/select2.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset('vendor/bootstrap-datepicker/bootstrap-datepicker3.standalone.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset('vendor/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" media="screen">
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js">
+{% endblock %}
+
+{% block content %}
+
+    <section id="page-title" class="padding-top-15 padding-bottom-15 padding-left-15" >
+
+        <h2>Create New Job</h2>
+        <div class="container-fluid container-fullw bg-white">
+            <!-- start: PAGE TITLE -->
+            <div class="col-md-9">
+
+                <div class="panel panel-white no-radius">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Joblist creation</h5>
+                    </div>
+                    <div class="container-fluid container-fullw">
+                        <div class="row">
+
+                        </div>
+
+
+
+    {{ form_start(form) }}
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Title
+                </h5>
+                {{ form_widget(form.title, {'attr' : {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Openings/Job Criteria
+                </h5>
+                {{ form_widget(form.openings, {'attr' : {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Description
+                </h5>
+                {{ form_widget(form.description, {'attr' : {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    JOB Type
+                </h5>
+                {{ form_widget(form.jobTag, {'attr' : {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Job Location
+                </h5>
+                {{ form_widget(form.jobLocation, {'attr' : {'class': 'form-control'}}) }}
+            </div>
+                        {#{{ form_widget(form.skills) }}#}
+
+                        {#<div class="tags" data-prototype="&lt;div&gt;&lt;label class=&quot; required&quot;&gt;__name__&lt;/label&gt;&lt;div id=&quot;jobList_skills___name__&quot;&gt;&lt;div&gt;&lt;label for=&quot;JobList_skills___name___name&quot; class=&quot; required&quot;&gt;Name&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;jobList_skills___name___name&quot; name=&quot;joblist[skills][__name__][name]&quot; required=&quot;required&quot; maxlength=&quot;255&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;">#}
+                        {#</div>#}
+
+
+
+                        {#{{ form_start(form1) }}#}
+                        {#<div class="form-group">#}
+                            {#<h5 class="text-bold margin-top-25 margin-bottom-15">#}
+                                {#Add a new Skill#}
+                            {#</h5>#}
+
+                            {#{{ form_widget(form1.skillTitle) }}#}
+                        {#</div>#}
+                        {#<input type="submit" value="Add" />#}
+                        {#{{ form_end(form1) }}#}
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Skills
+                            </h5>
+                            {{ form_widget(form.skills) }}
+                        </div>
+
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Created on
+                </h5>
+                {{ form_widget(form.createdAt) }}
+            </div>
+
+            <div class="form-group">
+                <h5 class="text-bold margin-top-25 margin-bottom-15">
+                    Added By
+                </h5>
+                {{ form_widget(form.addedBy) }}
+            </div>
+
+
+        <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }}
+
+        <br>
+
+
+
+            <a href="{{ path('joblist_index') }}" class="btn btn-primary">Back to the list</a>
+
+
+            </div>
+        </div>
+
+    </div>
+            </div>
+        </div>
+
+</section>
+{% endblock %}
+
+
+{% block javascripts %}
+
+{{ parent() }}
+
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section id="page-title" class="padding-top-15 padding-bottom-15 padding-left-15" >
+
+    <h2>Education Category</h2>
+    <div class="container-fluid container-fullw bg-white">
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-9">
+
+            <div class="panel panel-white no-radius">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Education Category</h5>
+                </div>
+                <div class="container-fluid container-fullw">
+                    <div class="row">
+                        <div class="table-responsive">
+                        <table class="table table-striped table-hover" id="sample_2">
+
+
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Edutitle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for edCategory in edCategories %}
+            <tr>
+                <td><a href="{{ path('edcategory_show', { 'id': edCategory.id }) }}" >{{ edCategory.id }}</a></td>
+                <td>{{ edCategory.eduTitle }}</td>
+                <td>
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('edcategory_edit', { 'id': edCategory.id }) }}" class="btn btn-light-azure">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('edcategory_new') }}" class="btn btn-success">Create a new edCategory</a>
+        </li>
+    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

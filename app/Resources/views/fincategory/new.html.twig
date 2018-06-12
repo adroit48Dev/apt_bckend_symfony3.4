@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<section id="page-title" class="padding-top-15 padding-bottom-15 padding-left-15" >
+
+    <h2>Create New Job</h2>
+    <div class="container-fluid container-fullw bg-white">
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-9">
+
+            <div class="panel panel-white no-radius">
+                <div class="panel-heading">
+                    <h5 class="panel-title">Joblist creation</h5>
+                </div>
+                <div class="container-fluid container-fullw">
+                    <div class="row">
+                        <h1></h1></br>
+
+                        <h1>Finlist creation</h1>
+    <h1>Fincategory creation</h1>
+
+    {{ form_start(form) }}
+
+                        <div class="form-group">
+                            <h5 class="text-bold margin-top-25 margin-bottom-15">
+                                Created on
+                            </h5>
+                            {{ form_widget(form.finType) }}
+                        </div>
+
+        <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('fincategory_index') }}">Back to the list</a>
+        </li>
+    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

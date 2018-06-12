@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section id="page-title" class="padding-top-10 padding-bottom-15 padding-left-10" >
+    <h2>JobList</h2>
+    <div class="container-fluid container-fullw bg-white">
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-12">
+
+
+
+            <div class="container-fluid container-fullw">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Job Full List</span></h5>
+                        <div class="row">
+
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" id="sample_2">
+
+
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Openings</th>
+                <th>Description</th>
+                <th>Createdat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jobList in jobLists %}
+            <tr>
+                <td><a href="{{ path('joblist_show', { 'id': jobList.id }) }}">{{ jobList.id }}</a></td>
+                <td>{{ jobList.title }}</td>
+                <td>{{ jobList.openings }}</td>
+                <td>{{ jobList.description }}</td>
+                <td>{% if jobList.createdAt %}{{ jobList.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        {#<li>#}
+                            {#<a href="{{ path('joblist_show', { 'id': jobList.id }) }}" class="btn btn-primary">show</a>#}
+                        {#</li>#}
+                        <li>
+                            <a href="{{ path('joblist_edit', { 'id': jobList.id }) }}" class="btn btn-light-azure">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('joblist_new') }}" class="btn btn-success">Create a new jobList</a>
+        </li>
+    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

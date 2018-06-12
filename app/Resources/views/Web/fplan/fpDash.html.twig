@@ -1,0 +1,63 @@
+{% extends 'Web/base1.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid container-fullw bg-custom">
+
+        <!-- start: FEATURED BOX LINKS -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-user fa-stack-1x fa-inverse"></i> </span>
+                        <h2 class="StepTitle">LOANS</h2>
+                        <p class="text-small">
+
+                        </p>
+                        <p class="links cl-effect-1">
+                            <a href = "{{ path('fp_loan') }}" >
+                                view more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-money fa-stack-1x fa-inverse"></i> </span>
+                        <h2 class="StepTitle">INSURANCE</h2>
+                        <p class="text-small">
+                            The Manage Orders tool provides a view of all your orders.
+                        </p>
+                        <p class="cl-effect-1">
+                            <a href=" {{ path('fp_ins') }}">
+                                view more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-home fa-stack-1x fa-inverse"></i> </span>
+                        <h2 class="StepTitle">CREDIT CARDS</h2>
+                        <p class="text-small">
+                            Store, modify, and extract information from your database.
+                        </p>
+                        <p class="links cl-effect-1">
+                            <a href=" {{ path('fp_cc') }}">
+                                view more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+

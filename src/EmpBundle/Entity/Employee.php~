@@ -1,0 +1,201 @@
+<?php
+
+namespace EmpBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+
+
+
+
+
+/**
+ * Employee
+ *
+ * @ORM\Table(name="employee")
+ * @ORM\Entity(repositoryClass="EmpBundle\Repository\EmployeeRepository")
+ *
+ * @UniqueEntity(fields={"empPerMail"}, message="This Mail is already taken")
+ */
+class Employee implements UserInterface
+
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(name="username")
+     */
+    private $username;
+
+
+    /**
+     * @ORM\Column(name="emp_name", type="string")
+     *
+     *
+     */
+    private $empName;
+
+    /**
+     * @Assert\Email()
+     * @ORM\Column(name="emp_mail", type="string", unique=true)
+     *
+     *
+     */
+    private $empMail;
+
+    /**
+     * @Assert\Email()
+     * @ORM\Column(name="emp_per_mail", type="string")
+     *
+     */
+    private $empPerMail;
+
+    /**
+     *
+     *
+     *
+     *
+     * @ORM\Column(name="emp_mobile",  length=255, unique=true)
+     *
+     */
+    private $empMobile;
+
+    /**
+    *
+     *
+     *
+     *
+     * @ORM\Column(name="emp_mobile_two")
+     */
+    private $empMobileTwo;
+
+    /**
+     * @ORM\Column(name="emp_dob", type="date")
+     *
+     */
+    private $empDob;
+
+    /**
+     * @ORM\Column(name="emp_do_join", type="datetime")
+     *
+     *
+     * @var \DateTime
+     */
+    private $empDoJoin;
+
+    /**
+     * @ORM\Column(name="emp_address_field_one", type="string", nullable=false)
+     *
+     *
+     *
+     */
+    private $empAddressFieldOne;
+
+
+    /**
+     * @ORM\Column(name="emp_address_field_two", type="string", nullable=false)
+     *
+     *
+     *
+     */
+    private $empAddressFieldTwo;
+
+    /**
+     * @ORM\Column(name="city", type="string", nullable=false)
+     *
+     *
+     *
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(name="state", type="string", nullable=false)
+     *
+     *
+     *
+     */
+    private $state;
+
+
+    /**
+     * @ORM\Column(name="emp_dept", type="string")
+     *
+     */
+    private $empDept;
+
+    /**
+     * @ORM\Column(name="emp_status", type="string")
+     *
+     */
+    private $empStatus;
+
+    /**
+     * @ORM\Column(name="emp_type", type="string")
+     *
+     */
+    private $empType;
+
+    /**
+     * @var string
+     * @ORM\Column(name="emp_id", length=10)
+     *
+     */
+    private $empId;
+
+
+    /**
+     * @var string
+     * @ORM\Column(name="password")
+     */
+    private $password;
+
+
+
+
+    /**
+     * @var array
+     * @ORM\Column(name="roles", nullable=true)
+     *
+     */
+    private $roles;
+
+    
+
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+
+    public function getPassword()
+    {
+        // TODO: Implement getPassword() method.
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+
+}

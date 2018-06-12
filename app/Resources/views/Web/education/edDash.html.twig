@@ -1,0 +1,48 @@
+{% extends 'Web/base1.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid container-fullw bg-custom">
+
+        <!-- start: FEATURED BOX LINKS -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-user fa-stack-1x fa-inverse"></i> </span>
+                        <h2 class="StepTitle">SCHOOLS</h2>
+                        <p class="text-small">
+
+                        </p>
+                        <p class="links cl-effect-1">
+                            <a href = "{{ path('edu_schools') }}" >
+                                view more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-money fa-stack-1x fa-inverse"></i> </span>
+                        <h2 class="StepTitle">COLLEGES</h2>
+                        <p class="text-small">
+                            The Manage Orders tool provides a view of all your orders.
+                        </p>
+                        <p class="cl-effect-1">
+                            <a href=" {{ path('edu_colleges') }}">
+                                view more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+{% endblock %}
+

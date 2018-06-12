@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section id="page-title" class="padding-top-10 padding-bottom-15 padding-left-10" >
+    <h2>Realities</h2>
+    <div class="container-fluid container-fullw bg-white">
+        <!-- start: PAGE TITLE -->
+        <div class="col-md-12">
+
+
+
+            <div class="container-fluid container-fullw">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Realities List</span></h5>
+                        <div class="row">
+
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" id="sample_2">
+
+
+
+
+
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Realtitle</th>
+                <th>Realavailable</th>
+                <th>Realdescription</th>
+                <th>Realcreatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reList in reLists %}
+            <tr>
+                <td><a href="{{ path('relist_show', { 'id': reList.id }) }}">{{ reList.id }}</a></td>
+                <td>{{ reList.realTitle }}</td>
+                <td>{{ reList.realAvailable }}</td>
+                <td>{{ reList.realDescription }}</td>
+                <td>{% if reList.realCreatedAt %}{{ reList.realCreatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('relist_show', { 'id': reList.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('relist_edit', { 'id': reList.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('relist_new') }}">Create a new reList</a>
+        </li>
+    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
