@@ -4,77 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../final/src/AppBundle/Controller/Api/AccountsController.php" description="return $this-&gt;getAccountRepository()-&gt;findAllForUs..." line="87" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a8f6cb3-25ae-4ef8-9d46-1296a22c6cf9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Web/fullEduView.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Web/fullFplanView.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Web/fullRealView.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Web/fullView.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Web/search.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/serializer/FOSUB/Model.User.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/EducationApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/FinanceApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/RealApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/ionicUserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SearchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Form/FilterJobKeywordType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Form/ProfileType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmpBundle/Repository/UserAppliedRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/app_apt_adroit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app_apt_adroit.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/base1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/base1.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/education/colleges.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/education/colleges.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/education/schools.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/education/schools.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/fplan/cc.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/fplan/cc.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/fplan/insurance.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/fplan/insurance.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/fplan/loans.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/fplan/loans.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/profile.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/reality/flats.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/reality/flats.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/reality/plots.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/reality/plots.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/reality/villas.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/reality/villas.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/core.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/core.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/it.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/it.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/medical.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/medical.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/non.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Web/recruitment/non.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/RecApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Api/v1/RecApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/EducationalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/EducationalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FinancialPlanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FinancialPlanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RealitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RealitiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/RecruitmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RecruitmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/WebPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/WebPageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/UserApplied.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/UserApplied.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/RegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/RegistrationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserAppliedRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserAppliedRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Controller/Admin/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Controller/Admin/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Controller/Admin/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Controller/Admin/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Entity/EduList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Entity/EduList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Entity/FinList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Entity/FinList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Entity/JobList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Entity/JobList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Entity/ReList.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Entity/ReList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Form/JobListType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Form/JobListType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpBundle/Repository/JobListRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpBundle/Repository/JobListRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
-    </list>
+    <list default="true" id="4a8f6cb3-25ae-4ef8-9d46-1296a22c6cf9" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +48,17 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="adroit48Dev" />
+        <option value="puvi" />
+        <option value="Puvi" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -393,20 +333,28 @@
       <workItem from="1529239919747" duration="12146000" />
       <workItem from="1529291163445" duration="8744000" />
       <workItem from="1529316837972" duration="2664000" />
-      <workItem from="1529376849170" duration="8565000" />
+      <workItem from="1529376849170" duration="8888000" />
     </task>
+    <task id="LOCAL-00001" summary="Master Commit-19/06/2018">
+      <created>1529411713932</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529411713932</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378555000" />
+    <option name="totallyTimeSpent" value="378878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="26" width="1299" height="708" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2748268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2748268" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32943144" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" side_tool="true" visible="true" weight="0.32943144" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -429,6 +377,12 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Master Commit-19/06/2018" />
+    <option name="LAST_COMMIT_MESSAGE" value="Master Commit-19/06/2018" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
