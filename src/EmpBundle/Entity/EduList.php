@@ -2,7 +2,9 @@
 
 namespace EmpBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * EduList
@@ -66,6 +68,34 @@ class EduList
      */
     private $listEdu;
 
+    /**
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedEdu", mappedBy="education")
+     */
+    private $userApplied;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+
 
     /**
      *
@@ -113,6 +143,7 @@ class EduList
 
     /**
      * Get edTitle
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -137,6 +168,7 @@ class EduList
 
     /**
      * Get edDescription
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -161,6 +193,7 @@ class EduList
 
     /**
      * Get edCategory
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -174,6 +207,7 @@ class EduList
      *
      * @param string $edLocation
      *
+     *
      * @return EduList
      */
     public function setEdLocation($edLocation)
@@ -185,6 +219,7 @@ class EduList
 
     /**
      * Get edLocation
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -265,4 +300,42 @@ class EduList
     {
         return $this->listEdu;
     }
+
+    public function __construct()
+    {
+        $this->userApplied = new ArrayCollection();
+    }
+
+    /**
+     * @param mixed $userApplied
+     */
+    public function setUserApplied(\AppBundle\Entity\UserAppliedEdu $userApplied = null)
+    {
+        $this->userApplied = $userApplied;
+
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserApplied()
+    {
+        return $this->userApplied;
+    }
+
+    public function isAppliedByUser($user)
+    {
+        if ($user) {
+            foreach ($this->userApplied as $userApplied) {
+                if ($userApplied->getUser() == $user) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
 }

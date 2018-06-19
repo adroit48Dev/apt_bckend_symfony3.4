@@ -77,44 +77,159 @@ class User extends BaseUser
     protected $roles;
 
     /**
-     * @ORM\ManyToMany(targetEntity="EmpBundle\Entity\JobList", mappedBy="userApplied", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserApplied", mappedBy="user")
+     *
      */
     private $jobApplied;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedReal", mappedBy="user")
+     */
+    private $realApplied;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedFinance", mappedBy="user")
+     */
+    private $finApplied;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedEdu", mappedBy="user")
+     */
+    private $eduApplied;
+
+    /**
+     * @return mixed
+     */
+    public function getEduApplied()
+    {
+        return $this->eduApplied;
+    }
+
+    /**
+     * @param mixed $eduApplied
+     */
+    public function setEduApplied($eduApplied)
+    {
+        $this->eduApplied = $eduApplied;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFinApplied()
+    {
+        return $this->finApplied;
+    }
+
+    /**
+     * @param mixed $finApplied
+     */
+    public function setFinApplied($finApplied)
+    {
+        $this->finApplied = $finApplied;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRealApplied()
+    {
+        return $this->realApplied;
+    }
+
+    /**
+     * @param mixed $realApplied
+     */
+    public function setRealApplied($realApplied)
+    {
+        $this->realApplied = $realApplied;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getJobApplied()
+    {
+        return $this->jobApplied;
+    }
+
+    /**
+     * @param mixed $jobApplied
+     */
+    public function setJobApplied($jobApplied)
+    {
+        $this->jobApplied = $jobApplied;
+    }
+
+    /**
+     * @ORM\OneToOne(targetEntity="Profile", mappedBy="user")
+     **/
+    private $profile;
+
+    /**
+     * @return mixed
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * @param mixed $profile
+     */
+    public function setProfile($profile)
+    {
+        $this->profile = $profile;
+    }
+
+
+
+
 
    public function __construct()
     {
         parent::__construct();
         $this->jobApplied = new ArrayCollection();
+        $this->eduApplied = new ArrayCollection();
+        $this->finApplied = new ArrayCollection();
+        $this->realApplied = new ArrayCollection();
+
 
     }
 
-    /**
-     * @param JobList $jobList
-     * @return $this
-     */
-    public function addJobApplied(JobList $jobList){
-       $this->jobApplied[] = $jobList;
 
-       return $this;
-    }
-
-    /**
-     * @param JobList $jobList
-     * @return $this
-     */
-    public function removeJobApplied(JobList $jobList){
-       $this->jobApplied->removeElement($jobList);
-
-       return $this;
-    }
-
-    /**
-     * @return ArrayCollection
-     *
-     */
-    public function getJobApplied(){
-       return $this->jobApplied;
-    }
+//
+//    /**
+//     * @param JobList $jobList
+//     * @return $this
+//     */
+//    public function addJobApplied(JobList $jobList){
+//        $this->jobApplied->add($jobList);
+//        $jobList->setUserApplied($this);
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * @param JobList $jobList
+//     * @return $this
+//     */
+//    public function removeJobApplied(JobList $jobList){
+//        $this->jobApplied->removeElement($jobList);
+//        $jobList->removeUserApplied($this);
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * @return ArrayCollection
+//     *
+//     */
+//    public function getJobApplied(){
+//        return $this->jobApplied;
+//    }
 
 
     /**
@@ -154,5 +269,10 @@ class User extends BaseUser
     public function getMobile()
     {
         return $this->mobile;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

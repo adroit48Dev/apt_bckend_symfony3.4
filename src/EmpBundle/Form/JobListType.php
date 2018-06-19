@@ -35,7 +35,7 @@ class JobListType extends AbstractType
              }       ,
                     'choice_label'=> 'skillTitle',
                     'multiple'=> true,
-                    'expanded'=>true,
+//                    'expanded'=>true,
 
                 ]
             )

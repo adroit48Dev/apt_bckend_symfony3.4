@@ -50,18 +50,23 @@
                                         {% for sk in tag.skills %}
                                             {{ sk.skillTitle }}, {% endfor %}</div><br>
                                     <div class="panel-body">
-                                        {{ tag.description }}
+                                        {{ tag.description  | length >50 ? tag.description|slice(0, 50) ~ '...' : tag.description  }}
                                     </div>
 
                                     <div class="panel-footer">
                                         <div class="fa-hover col-md-3 col-sm-4">Posted :
                                             <i class="ti-calendar"> </i> {{ tag.createdAt |date("Y-m-d", "Asia/Kolkata") }} </div>
 
-                                        <a href=""  type="submit" class="">Apply</a>
+                                        <a href="{{ path('view_detail', {'id': tag.id}) }}"  type="submit" class=""><span>View</span></a>
+
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
+                    </div>
+                    <div class="navigation" align="right" >
+                        {{ knp_pagination_render(list) }}
+
                     </div>
 
 

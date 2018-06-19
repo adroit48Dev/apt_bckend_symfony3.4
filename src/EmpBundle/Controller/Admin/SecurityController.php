@@ -22,7 +22,7 @@ class SecurityController extends Controller
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/admin/employee/login", name="security_login")
+     * @Route("/employee/admin/login", name="security_login")
      * @param AuthenticationUtils $authenticationUtils
      */
     public function loginAction(Request $request, AuthenticationUtils $authenticationUtils){
@@ -57,7 +57,7 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/admin/employee/logout", name="logout")
+     * @Route("/employee/admin/logout", name="logout")
      */
     public function logoutAction(){
 

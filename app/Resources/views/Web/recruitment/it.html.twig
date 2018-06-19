@@ -6,8 +6,30 @@
 {% block content %}
     <div class="container-fluid container-fullw bg-custom">
 
-    <section id="page-title " class="padding-top-10 padding-bottom-15 padding-left-10 bg-white navbar-static-top" >
+        <div class="row">
+            <div class="col-md-12">
+                {#<div class="search-classic">#}
+                    {#<form action="#">#}
+                        {#<div class="input-group well">#}
+                            {#<input type="text" class="form-control" placeholder="">#}
+
+                                {#<button class="btn btn-primary" type="button">#}
+                                    {#<i class="fa fa-search"></i><a href="{{ path('search_it') }}">Search</a></button>#}
+
+            {#</div>#}
+                    {#</form>#}
+                {#</div>#}
+
+            </div>
+        </div>
+
+
+                    <section id="page-title " class="padding-top-10 padding-bottom-15 padding-left-10 bg-white navbar-static-top" >
         <h2>Recruitment | IT</h2>
+
+
+
+
     </section>
 
             <!-- start: PAGE TITLE -->
@@ -24,7 +46,7 @@
                             </div>
 
 
-                            {% for tag in list%}
+                            {% for tag in list %}
 
 
     <div class="col-md-12">
@@ -50,18 +72,42 @@
                 {% for sk in tag.skills %}
                     {{ sk.skillTitle }}, {% endfor %}</div><br>
             <div class="panel-body">
-                    {{ tag.description }}
+                    {{ tag.description  | length >50 ? tag.description|slice(0, 50) ~ '...' : tag.description  }}
                 </div>
 
             <div class="panel-footer">
+
                 <div class="fa-hover col-md-3 col-sm-4">Posted :
                     <i class="ti-calendar"> </i> {{ tag.createdAt |date("Y-m-d", "Asia/Kolkata") }} </div>
 
-                    <a href=""  type="submit" class="">Apply</a>
+
+
+                {#{% if tag.isAddedByUser(app.getUser()) %}#}
+
+                    <div class="btn-sm">
+
+
+
+
+                    <a href="{{ path('view_detail', {'id': tag.id}) }}"  type="submit" class=""><span>View</span></a>
+
+
+
+</div>
+
             </div>
         </div>
+        <div>
+
+        </div>
     </div>
+
                 {% endfor %}
+                        </div>
+
+                        <div class="navigation" align="right" >
+                            {{ knp_pagination_render(list) }}
+
                         </div>
 
 
@@ -70,6 +116,7 @@
                 </div>
                 </div>
             </div>
+
 
     </section>
 

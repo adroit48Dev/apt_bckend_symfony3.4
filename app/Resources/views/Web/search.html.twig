@@ -1,0 +1,24 @@
+{% extends 'Web/base1.html.twig' %}
+
+{% block content %}
+
+    {% if job|length %}
+    <div class="page-title">
+    <h2>
+        {% set count = job.getTotalItemCount %}
+        {% transchoice count %}
+            {0} %count% jobs matching query|{1} %count% job matching query|]1,Inf[%count% jobs matching query
+        {% endtranschoice %}
+    </h2>
+
+
+        <div class="navigation text-center">
+            {% for j in job %}
+
+                {{ j.title }}
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+{% endblock %}

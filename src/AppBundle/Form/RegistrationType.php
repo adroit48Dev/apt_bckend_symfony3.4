@@ -11,6 +11,7 @@ namespace AppBundle\Form;
 
 use AppBundle\AppBundle;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,8 +23,8 @@ class RegistrationType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('mobile')
-            ->add('plainPassword')
-            ->add('password')
+            ->add('plainPassword', PasswordType::class)
+            ->add('password', PasswordType::class)
             ;
     }
 

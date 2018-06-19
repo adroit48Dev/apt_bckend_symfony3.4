@@ -59,13 +59,14 @@
             </div>
 
             <fieldset>
+                {% block body %}
                 <legend >
                     Sign in to your account
                 </legend>
                 <p>
                     Please click here to login.
                 </p>
-                {% block body %}
+
 
 
 
@@ -108,8 +109,9 @@
 
                     <button type="submit" class="btn btn-primary">login</button>
 
-                {% endblock %}
+
                 </form>
+                {% endblock %}
         </fieldset>
 
 

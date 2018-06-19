@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
+
 /**
  * UserAppliedRepository
  *
@@ -10,4 +12,23 @@ namespace AppBundle\Repository;
  */
 class UserAppliedRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllForUserJobs(User $user)
+    {
+        $qb = $this->createQueryBuilder('favorite');
+
+        return $qb->innerJoin('favorite.job', 'job')
+            ->andWhere('favorite.user = :user')
+            ->andWhere('job.isPublished = 1')
+            ->orderBy('favorite.created', 'DESC')
+            ->orderBy('favorite.id', 'DESC')
+            ->setParameter('user', $user)
+            ->getQuery()
+            ->execute();
+    }
+
+
+
+
+
+
 }

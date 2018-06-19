@@ -4,6 +4,7 @@ namespace EmpBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * FinList
@@ -76,6 +77,33 @@ class FinList
      */
     private $listFin;
 
+    /**
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedFinance", mappedBy="fPlan")
+     */
+    private $userApplied;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 
     /**
      * Get id
@@ -91,6 +119,7 @@ class FinList
      * Set finTitle
      *
      * @param string $finTitle
+     * @Groups({"searchable"})
      *
      * @return FinList
      */
@@ -127,6 +156,7 @@ class FinList
 
     /**
      * Get finDescription
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -151,6 +181,7 @@ class FinList
 
     /**
      * Get finPlan
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -175,6 +206,7 @@ class FinList
 
     /**
      * Get finType
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -226,6 +258,7 @@ class FinList
      *
      * @param \EmpBundle\Entity\Location $finLocation
      *
+     *
      * @return FinList
      */
     public function setFinLocation(\EmpBundle\Entity\Location $finLocation)
@@ -237,6 +270,7 @@ class FinList
 
     /**
      * Get finLocation
+     * @Groups({"searchable"})
      *
      * @return \EmpBundle\Entity\Location
      */
@@ -267,6 +301,42 @@ class FinList
     public function getListFin()
     {
         return $this->listFin;
+    }
+
+    public function __construct()
+    {
+        $this->userApplied = new ArrayCollection();
+    }
+
+    /**
+     * @param mixed $userApplied
+     */
+    public function setUserApplied(\AppBundle\Entity\UserAppliedFinance $userApplied = null)
+    {
+        $this->userApplied = $userApplied;
+
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserApplied()
+    {
+        return $this->userApplied;
+    }
+
+    public function isAppliedByUser($user)
+    {
+        if ($user) {
+            foreach ($this->userApplied as $userApplied) {
+                if ($userApplied->getUser() == $user) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 

@@ -48,22 +48,22 @@
         <div class="sidebar-container perfect-scrollbar">
             <nav>
                 <!-- start: SEARCH FORM -->
-                <div class="search-form">
-                    <a class="s-open" href="#">
-                        <i class="ti-search"></i>
-                    </a>
-                    <form class="navbar-form" role="search">
-                        <a class="s-remove" href="#" target=".navbar-form">
-                            <i class="ti-close"></i>
-                        </a>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <button class="btn search-button" type="submit">
-                                <i class="ti-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                {#<div class="search-form">#}
+                    {#<a class="s-open" href="{{ path('search_results') }}">#}
+                        {#<i class="ti-search"></i>#}
+                    {#</a>#}
+                    {#<form class="navbar-form" role="search">#}
+                        {#<a class="s-remove" href="{{ path('search_results') }}" target=".navbar-form">#}
+                            {#<i class="ti-close"></i>#}
+                        {#</a>#}
+                        {#<div class="form-group">#}
+                            {#<input type="text" class="form-control" placeholder="Search...">#}
+                            {#<a href="{{ path('search_results') }}"><button class="btn search-button" type="submit">#}
+                                    {#<i class="ti-search"></i>#}
+                                {#</button></a>#}
+                        {#</div>#}
+                    {#</form>#}
+                {#</div>#}
                 <!-- end: SEARCH FORM -->
                 <!-- start: MAIN NAVIGATION MENU -->
                 <div class="navbar-title">
@@ -258,6 +258,38 @@
                             </div>
                         </a>
                     </li>
+                    {% if (is_granted('IS_AUTHENTICATED_FULLY') == false) %}
+
+                    <li>
+                        <a href="{{ path('fos_user_security_login') }}">
+                            <div class="item-content">
+                                <div class="item-media">
+                                    <span class="fa fa-lock">  </span>
+                                </div>
+                                <div class="item-inner">
+                                    <span class="title"> Login </span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {% endif %}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <span class="fa fa-lock">  </span>
+                                        </div>
+                                        <div class="item-inner">
+                                            <span class="title"> Logout </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                    {% endif %}
+
+
                 </ul>
                 <!-- end: CORE FEATURES -->
                 <!-- start: DOCUMENTATION BUTTON -->
@@ -290,6 +322,8 @@
             <!-- start: NAVBAR COLLAPSE -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-right">
+
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <!-- start: MESSAGES DROPDOWN -->
                     <li class="dropdown">
                         <a href class="dropdown-toggle" data-toggle="dropdown">
@@ -297,67 +331,21 @@
                         </a>
                         <ul class="dropdown-menu dropdown-light dropdown-messages dropdown-large">
                             <li>
-                                <span class="dropdown-header"> Unread messages</span>
+                                <span class="dropdown-header"> Your Messages</span>
                             </li>
                             <li>
-                                <div class="drop-down-wrapper ps-container">
-                                    <ul>
-                                        <li class="unread">
-                                            <a href="javascript:;" class="unread">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img src="{{ asset('assets/images/avatar-2.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Nicole Bell</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                                                        <span class="time"> Just Now</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;" class="unread">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img src="{{ asset('assets/images/avatar-3.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Steven Thompson</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                                                        <span class="time">8 hrs</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">
-                                                <div class="clearfix">
-                                                    <div class="thread-image">
-                                                        <img src="{{ asset('assets/images/avatar-5.jpg') }}" alt="">
-                                                    </div>
-                                                    <div class="thread-content">
-                                                        <span class="author">Kenneth Ross</span>
-                                                        <span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula...</span>
-                                                        <span class="time">14 hrs</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+
+                                <div>Oops! No notifications.</div>
+
                             </li>
-                            <li class="view-all">
-                                <a href="#">
-                                    See All
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <!-- end: MESSAGES DROPDOWN -->
 
 
                     <!-- start: USER OPTIONS DROPDOWN -->
+
 
                     <li class="dropdown current-user">
                         <a href class="dropdown-toggle" data-toggle="dropdown">
@@ -366,7 +354,9 @@
                         <ul class="dropdown-menu dropdown-dark">
                             <li>
                                 <a href="">
-                                    My Profile
+
+
+                                    {{ app.user.username }}
                                 </a>
                             </li>
 
@@ -377,8 +367,8 @@
                             </li>
 
                             <li>
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                    <a href="{{ path('logout') }}">
+
+                                    <a href="{{ path('fos_user_security_logout') }}">
                                         Log Out
                                     </a>
                                 {% endif %}

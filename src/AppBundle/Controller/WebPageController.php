@@ -20,7 +20,12 @@ class WebPageController extends Controller
      */
     public function webIndexAction()
     {
-        return $this->render('Web/web.html.twig' );
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $username = $user->getUsername();
+
+        return $this->render('Web/web.html.twig', [
+            'user' => $username,
+        ] );
     }
 
 }

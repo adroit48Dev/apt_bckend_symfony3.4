@@ -1,16 +1,24 @@
 emp:
     resource: "@EmpBundle/Controller/Admin/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+    prefix: /
 
 employee_registration:
-    path:     /employee/register
+    path:     /admin/employee/register
     defaults: { _controller: EmpBundle:Admin\Registration:register }
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
+api_login_check:
+    path: /api/login_check
+
+api_register:
+    path: /api/register
+    defaults: { _controller: AppBundle:Api\v1\ionicUser:addUser }
+    methods: POST|GET

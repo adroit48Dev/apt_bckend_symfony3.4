@@ -23,7 +23,7 @@ class RegistrationController extends Controller
     /**
      * @param Request $request
      * @return Response
-     * @Route("/admin/employee/register", name="employee_register")
+     * @Route("/employee/register", name="employee_register")
      */
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder){
 
@@ -62,7 +62,7 @@ class RegistrationController extends Controller
      * @param Request $request
      * @param Employee $employee
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
-     * @Route("/admin/employee/{id}/edit", name="employee_edit")
+     * @Route("/employee/{id}/edit", name="employee_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Employee $employee){

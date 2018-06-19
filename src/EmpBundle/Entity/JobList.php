@@ -5,6 +5,7 @@ namespace EmpBundle\Entity;
 use AppBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
@@ -83,13 +84,119 @@ class JobList
     private $listRec;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", inversedBy="jobApplied", cascade={"persist", "all"})
-     * @ORM\JoinTable(name="user_applied_jobs",
-     *     joinColumns={
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
-*     @ORM\JoinColumn(name="job_id", referencedColumnName="id")}, inverseJoinColumns={
 
-*     @ORM\JoinColumn(name="user_id", referencedColumnName="id")})
+    /**
+     * @ORM\Column(type="boolean", nullable=true, name="is_featured")
+     */
+    private $isFeatured;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true, name="featured_until")
+     */
+    private $featuredUntil;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true, name="is_published")
+     */
+    private $isPublished;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true, name="published_until")
+     */
+    private $publishedUntil;
+
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getIsFeatured()
+    {
+        return $this->isFeatured;
+    }
+
+    /**
+     * @param mixed $isFeatured
+     */
+    public function setIsFeatured($isFeatured)
+    {
+        $this->isFeatured = $isFeatured;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFeaturedUntil()
+    {
+        return $this->featuredUntil;
+    }
+
+    /**
+     * @param mixed $featuredUntil
+     */
+    public function setFeaturedUntil($featuredUntil)
+    {
+        $this->featuredUntil = $featuredUntil;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsPublished()
+    {
+        return $this->isPublished;
+    }
+
+    /**
+     * @param mixed $isPublished
+     */
+    public function setIsPublished($isPublished)
+    {
+        $this->isPublished = $isPublished;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublishedUntil()
+    {
+        return $this->publishedUntil;
+    }
+
+    /**
+     * @param mixed $publishedUntil
+     */
+    public function setPublishedUntil($publishedUntil)
+    {
+        $this->publishedUntil = $publishedUntil;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+//
+
+    /**
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\UserApplied", mappedBy="job")
      */
     private $userApplied;
 
@@ -97,7 +204,7 @@ class JobList
 
 
 
-    /**
+       /**
      * Set createdIt.
      *
      * @param \DateTime $createdAt
@@ -160,37 +267,11 @@ class JobList
         $this->userApplied = new ArrayCollection();
 
 
+
+
     }
 
-    /**
-     * @param User $user
-     * @return $this
-     */
-    public function addUserApplied(User $user)
-    {
-        $this->userApplied[] = $user;
-
-        return $this;
-    }
-
-    /**
-     * @param User $user
-     * @return $this
-     */
-    public function removeUserApplied(User $user){
-
-        $this->userApplied->removeElement($user);
-
-        return $this;
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getUserApplied()
-    {
-        return $this->userApplied;
-    }
+//
 
     /**
      * @return mixed
@@ -236,6 +317,7 @@ class JobList
 
     /**
      * Get title
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -260,6 +342,7 @@ class JobList
 
     /**
      * Get openings
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -318,6 +401,7 @@ class JobList
 
     /**
      * Get skills
+     * @Groups({"searchable"})
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -342,7 +426,7 @@ class JobList
 
     /**
      * Get jobLocation
-     *
+     *@Groups({"searchable"})
      * @return \EmpBundle\Entity\Location
      */
     public function getJobLocation()
@@ -366,7 +450,7 @@ class JobList
 
     /**
      * Get jobTag
-     *
+     *@Groups({"searchable"})
      * @return \EmpBundle\Entity\Tag
      */
     public function getJobTag()
@@ -388,4 +472,35 @@ class JobList
     }
 
 
+
+    /**
+     * @param mixed $userApplied
+     */
+    public function setUserApplied(\AppBundle\Entity\UserApplied $userApplied = null)
+    {
+        $this->userApplied = $userApplied;
+
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserApplied()
+    {
+        return $this->userApplied;
+    }
+
+    public function isAppliedByUser($user)
+    {
+        if ($user) {
+            foreach ($this->userApplied as $userApplied) {
+                if ($userApplied->getUser() == $user) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }

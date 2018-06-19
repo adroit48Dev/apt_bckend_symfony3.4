@@ -7,7 +7,7 @@
     <div class="container-fluid container-fullw bg-custom">
 
         <section id="page-title " class="padding-top-10 padding-bottom-15 padding-left-10 bg-white navbar-static-top" >
-            <h2>Financial Plan | LOANS </h2>
+            <h2>Education | SCHOOLS </h2>
         </section>
 
         <!-- start: PAGE TITLE -->
@@ -18,7 +18,7 @@
             <div class="container-fluid container-fullw">
                 <div class="row">
                     <div class="col-md-12">
-                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Personal/Housing/Business Loans</span></h5>
+                        <h5 class="over-title margin-bottom-15"> <span class="text-bold">Schools</span></h5>
                         <div class="row">
 
                         </div>
@@ -60,11 +60,16 @@
                                         <div class="fa-hover col-md-3 col-sm-4">Posted :
                                             <i class="ti-calendar"> </i> {{ ed.edCreatedAt |date("Y-m-d", "Asia/Kolkata") }} </div>
 
-                                        <a href=""  type="submit" class="">Apply</a>
+                                        <a href="{{ path('view_edu_detail', {'id': ed.id}) }}"  type="submit" class=""><span>View</span></a>
+
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
+                    </div>
+                    <div class="navigation" align="right" >
+                        {{ knp_pagination_render(edu) }}
+
                     </div>
 
 

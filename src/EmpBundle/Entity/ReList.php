@@ -2,7 +2,10 @@
 
 namespace EmpBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * ReList
@@ -73,6 +76,33 @@ class ReList
      */
     private $listReal;
 
+    /**
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\UserAppliedReal", mappedBy="reality")
+     */
+    private $realApplied;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 
     /**
      *
@@ -122,6 +152,7 @@ class ReList
 
     /**
      * Get realTitle
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -157,6 +188,7 @@ class ReList
     /**
      * Set realDescription
      *
+     *
      * @param string $realDescription
      *
      * @return ReList
@@ -170,6 +202,7 @@ class ReList
 
     /**
      * Get realDescription
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -194,6 +227,7 @@ class ReList
 
     /**
      * Get realLocation
+     * @Groups({"searchable"})
      *
      * @return string
      */
@@ -243,6 +277,7 @@ class ReList
 
     /**
      * Get realType
+     * @Groups({"searchable"})
      *
      * @return \EmpBundle\Entity\RealCategory
      */
@@ -298,4 +333,42 @@ class ReList
     {
         return $this->listReal;
     }
+
+     public function __construct()
+     {
+         $this->realApplied = new ArrayCollection();
+     }
+
+    /**
+     * @param mixed
+     */
+    public function setUserApplied($realApplied)
+    {
+        $this->realApplied = $realApplied;
+
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserApplied()
+    {
+        return $this->realApplied;
+    }
+
+    public function isAppliedByUser($user)
+    {
+        if ($user) {
+            foreach ($this->realApplied as $userAppliedreal) {
+                if ($userAppliedreal->getUser() == $user) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
 }

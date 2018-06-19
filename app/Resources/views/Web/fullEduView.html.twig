@@ -1,0 +1,81 @@
+{% extends 'Web/base1.html.twig' %}
+
+{% block content %}
+
+
+    <div class="wrap-content container" id="container">
+        <!-- start: PAGE TITLE -->
+        <section id="page-title">
+            <div class="row">
+                <div class="col-sm-8">
+                    {% for m in item %}
+                    <h1 class="mainTitle">{{ m.edTitle }}</h1>
+                    <br>
+
+                    <i class="ti-map-alt">  </i>  {{ m.edLocation.city }}
+
+
+
+
+
+
+                </div>
+                <ol class="breadcrumb">
+                    <li>
+                        <span>Education</span>
+                    </li>
+                    <li class="active">
+                        <span>Opportunities</span>
+                    </li>
+                </ol>
+            </div>
+
+
+        </section>
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="over-title margin-bottom-15"> <span class="text-bold">Description</span></h5>
+                    <div>
+                        <p class="margin-top-20">
+                            {{ m.edDescription }}
+                        </p>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p class="margin-top-20">
+                                Please apply here.. <a href="{{ path('user_apply_edu', {'id': m.id}) }}"  type="submit" class="btn btn-o btn-primary"><span>Apply</span></a>
+
+                                {% for label, messages in app.flashes(['success', 'error']) %}
+                                {% for message in messages %}
+
+                            <div class="alert alert-{{ label }}">
+                                {{ message }}
+                                <br>
+                                <a href class="btn btn-o btn-danger pull-right" data-toggle-target="#">Close</a>
+
+
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
+                                    <a href="{{ path('fos_user_security_login') }}" class="btn btn-o btn-primary">Login</a>
+
+                                {% endif %}
+
+                            </div>
+                            </p>
+                            {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

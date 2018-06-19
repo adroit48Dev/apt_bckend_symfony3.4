@@ -52,7 +52,7 @@
 
                                     <div class="panel-body">
 
-                                        {{ fin.finDescription }}
+                                        {{ fin.finDescription | length >50 ? fin.finDescription|slice(0, 50) ~ '...' : fin.finDescription  }}
 
                                     </div>
 
@@ -60,11 +60,16 @@
                                         <div class="fa-hover col-md-3 col-sm-4">Posted :
                                             <i class="ti-calendar"> </i> {{ fin.finCreatedAt |date("Y-m-d", "Asia/Kolkata") }} </div>
 
-                                        <a href=""  type="submit" class="">Apply</a>
+                                        <a href="{{ path('view_fin_detail', {'id': fin.id}) }}"  type="submit" class=""><span>View</span></a>
+
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
+                    </div>
+                    <div class="navigation" align="right" >
+                        {{ knp_pagination_render(plan) }}
+
                     </div>
 
 
